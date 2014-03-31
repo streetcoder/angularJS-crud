@@ -13,6 +13,6 @@ define("HOST", "YOUR_HOST");
 define("USER", "YOUR_USER");
 define("DB", "YOUR_DB");
 
-- export products.sql in your database, N.B. there is some seeds data
+- export products.sql from the directory "sql" in your database, N.B. there is some seeds data
 
 that's it
