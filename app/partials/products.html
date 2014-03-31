@@ -1,0 +1,75 @@
+﻿
+<!--  products view  -->
+<div class="row">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="product-name" class="col-sm-3 control-label">Product Name</label>
+            <div class="col-sm-4">
+                <input type="text" data-ng-model="newProduct.name" class="form-control" id="product-name" placeholder="Product Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="code" class="col-sm-3 control-label">Code</label>
+            <div class="col-sm-4">
+                <input type="text" data-ng-model="newProduct.code" class="form-control" id="code" placeholder="Code">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="col-sm-3 control-label">Description</label>
+            <div class="col-sm-4">
+                <input type="text" data-ng-model="newProduct.description" class="form-control" id="description" placeholder="Description">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price" class="col-sm-3 control-label">Price</label>
+            <div class="col-sm-4">
+                <input type="text" data-ng-model="newProduct.price" class="form-control" id="price" placeholder="Price">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-10">
+                <button type="button" class="btn btn-primary"
+                    data-ng-disabled="!newProduct.name"
+                    data-ng-click="insertProduct()">Add Product</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr data-ng-repeat="product in products">
+            <td>{{ product.id}}</td>
+            <td>{{ product.name}}</td>
+            <td>{{ product.code}}</td>
+            <td>{{ product.price}}</td>
+            <td>
+
+                <button>
+                    <a class="glyphicon glyphicon-edit"></a>
+                </button>
+                <button data-ng-click="deleteProduct(product.id)">
+                    <a class="glyphicon glyphicon-trash"></a>
+                </button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
